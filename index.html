@@ -2920,7 +2920,7 @@
           `Wynik: ${correctCount} dobrych, ${wrongCount} złych`;
         el("bar").style.width = `${((current + 1) / questions.length) * 100}%`;
        el("question").innerHTML = q.question
-    .replace(/([a-z]\))/gi, "<br>$1")
+.replace(/\s([a-z]\))/g, "<br>$1")
     .replace(/([0-9]+\))/g, "<br>$1")
     .replace(/Prawidłowa odpowiedź to:/gi, "<br><br><b>Prawidłowa odpowiedź to:</b>")
     .replace(/^<br>/, "");
