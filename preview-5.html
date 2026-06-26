@@ -2919,7 +2919,11 @@
         el("scoreBox").textContent =
           `Wynik: ${correctCount} dobrych, ${wrongCount} złych`;
         el("bar").style.width = `${((current + 1) / questions.length) * 100}%`;
-        el("question").textContent = q.question;
+        el("question").innerHTML = q.question
+    .replace(/: a\)/g, ":<br><br>a)")
+    .replace(/\. b\)/g, ".<br>b)")
+    .replace(/\. c\)/g, ".<br>c)")
+    .replace(/\. d\)/g, ".<br>d)");
         el("answers").innerHTML = "";
         el("feedback").className = "feedback";
         el("feedback").textContent = "";
